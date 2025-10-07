@@ -33,20 +33,21 @@ public class EVA2_10_FOR {
         //EN ORDEN INVERSO
         System.out.println("");
         Scanner input = new Scanner(System.in);
-        int num, num1;
-        System.out.println("Introduce un numero: ");
+        int num, num1, num2, num3;
+        System.out.println("Introduce un numero (menor): ");
         num = input.nextInt();
-        System.out.println("Introduce otro numero; ");
+        System.out.println("Introduce otro numero(mayor); ");
         num1 = input.nextInt();
         
         for(int indice = num; indice <= num1; indice++){
-            System.out.println(indice + " - ");
+            System.out.print(indice + " - ");
         }
-        for(int indice = num1; indice >= num; indice++){
-            System.out.println(indice + " - ");
-        }
-        for(int indice = num; indice <= num1; indice++){
-            System.out.println(indice + " - ");
+        System.out.println("Introduce un numero (mayor): ");
+        num2 = input.nextInt();
+        System.out.println("Introduce otro numero(menor): ");
+        num3 = input.nextInt();
+        for(int indice = num1; indice >= num; indice--){
+            System.out.print(indice + " - ");
         }
         
     }
