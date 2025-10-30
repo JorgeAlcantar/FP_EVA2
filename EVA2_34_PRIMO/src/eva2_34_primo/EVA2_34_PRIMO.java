@@ -12,41 +12,37 @@ public class EVA2_34_PRIMO {
         //Scanner
         Scanner input = new Scanner(System.in);
         //Variables
-        double numero, elección;
+        int numero;
+        double elección;
         //Imprimir
         System.out.println("ENTRAR AL PROGRAMA DE VERIFICACIÓN DE NÚMEROS PRIMOS: SI (CUALQUIER NÚMERO) NO (0)");
         elección = input.nextDouble();
         while(elección != 0){
         System.out.println("*** DECISOR DE NÚMEROS PRIMOS ***");
-        System.out.print("Introduce un número para verificar que sea número primo o no: ");
-        //Solicitar datos
-        numero = input.nextDouble();
-        //VARIABLE DE RESIDUO
-        double resi, resi2;
-        //Cálculo
-        resi = numero % 1;
-        resi2 = numero % numero;
-        if(resi == 0 && resi2 == 0){
-            System.out.println("ES NÚMERO PRIMO.");
-            int eleccion2;
-            System.out.println("¿DESEA CONTINUAR? SI (CUALQUIER NUMERO) NO(0)");
-            eleccion2 = input.nextInt();
-            if(eleccion2 == 0){
-                System.out.println("FIN DEL PROGRAMA");
-                break;
-            }
-        }else{
-            System.out.println("NO ES NÚMERO PRIMO");
-            System.out.println("¿DESEA CONTINUAR? SI (CUALQUIER NUMERO) NO(0)");
-            int eleccion3 = input.nextInt();
-            if(eleccion3 == 0){
-                System.out.println("FIN DEL PROGRAMA");
-                break;
+        System.out.print("Introduce un número: ");
+        numero = input.nextInt();
+        
+        boolean valor = true; // asumimos que es primo al inicio
+        
+        if (numero <= 1) {
+            valor = false; // los números menores o iguales a 1 no son primos
+        } else {
+            // ciclo para verificar divisores
+            for (int i = 2; i <= numero / 2; i++) {
+                if (numero % i == 0) {
+                    valor = false; // si se encuentra un divisor, no es primo
+                    break; // se detiene el ciclo porque ya no es necesario continuar
+                }
             }
         }
         
+        // resultado final
+        if (valor) {
+            System.out.println(numero + " es un número primo.");
+        } else {
+            System.out.println(numero + " NO es un número primo.");
         }
-      
+        }
     }
     
 }

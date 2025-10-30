@@ -21,8 +21,8 @@ public class EVA2_31_PIRAMIDE {
             System.out.println(valor);
             valor += "*";
         }
-        for (int i = numero - 1; i > 0; i--) {
-            for (int j = 0; j < i; j++) {
+        for (int i = numero - 1; i > 0; i--) {//INVERSO ESTO INICIA EL CONTOE EN CUENTA REGRESIVA EMPEZADO DESDE EL NÚMERO QUE SE INTRODUJO - 1
+            for (int j = 0; j < i; j++) {//ESTO CONTROLA LAS DIMENSIONES DE LA COLUMNA USANDO I COMO LÍMITE
                 System.out.print("*");
             }
             System.out.println();
